@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Class Detail</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header>
+  <div class="logo">
+    <img src="images/logo.svg" alt="logo">
+  </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="admin-landing.html" ><i class="ri-information-2-line"></i> Homepage</a></li>
+      <li><a href="class-listing.html" class="active"><i class="ri-graduation-cap-line"></i> Class Management</a></li>
+      <li><a href="student-listing.html" ><i class="ri-file-2-line"></i> Student Management</a></li>
+      <li><a href="user-listing.html"><i class="ri-user-line"></i> User Management</a></li>
+    </ul>
+    <label for="profile-toggle" class="avatar-container">
+      <img class="avatar" src="images/avatar.png" alt="logo">
+    </label>
+
+    <!-- Hidden checkbox to toggle modal -->
+    <input type="checkbox" id="profile-toggle" class="toggle-checkbox">
+
+    <!-- Profile modal -->
+    <div class="profile-modal">
+      <div class="profile-title-wrapper">
+        <div class="profile-img-wrapper">
+          <img class="profile-img" src="images/avatar.png" alt="profile">
+          <button class="edit-btn"><i class="ri-edit-line"></i></button>
+        </div>
+        <h1>Moeun Samphorsmonydeth</h1>
+        <p class="subj-id-container">Admin</p>
+      </div>
+
+      <div class="menu-list">
+        <a class="button-line"><i class="ri-user-3-line"></i> Profile</a>
+        <a class="button-line"><i class="ri-lock-password-line"></i> Change Passwords</a>
+        <a href="admin-login.html" class="button-line red" ><i class="ri-logout-box-line"></i> Log out</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="content-wrapper">
+  <div class="page-title">
+    <div class="title-wrapper">
+      <a href="class-listing.html" class="item-title" style="width: 75px"><i class="ri-arrow-left-s-line"></i> Back</a>
+      <h3>Class Management</h3>
+      <p class="subtitle">All information you need to know about the class is here.</p>
+    </div>
+  </div>
+
+  <div class="info-container">
+    <div class="side-bar">
+      <a href="#" class="button-primary side-menu active" onclick="switchTab(event, 'general-info')">
+        <i class="ri-equalizer-3-fill ri-lg"></i>General Information</a>
+
+      <a href="#" class="button-primary side-menu" onclick="switchTab(event, 'attendance')">
+        <i class="ri-list-check-3 ri-lg"></i>Attendance</a>
+
+      <a href="#" class="button-primary side-menu" onclick="switchTab(event, 'configuration')">
+        <i class="ri-settings-3-line ri-lg"></i>Configuration</a>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+
+      <!-- General Information Section -->
+      <div id="general-info" class="content-section active-content">
+        <div class="class-info-card">
+          <div>
+            <h3>Class Name</h3>
+            <p class="subtitle">Class Name will be displayed when student are checking in.</p>
+          </div>
+          <input type="text" name="text" placeholder="Web-Cloud Technology" id="Check-in-remarks"/>
+        </div>
+
+        <div class="class-info-card">
+          <div>
+            <h3>Class URL & QR Code</h3>
+            <p class="subtitle">QR Code and URL are used to open a web-page that allows students to check in for attendance.</p>
+          </div>
+          <input type="text" name="text" placeholder="https://attendancemanagement.com/Y6zad8yZ" id="Check-in-remarks"/>
+          <div class="button-container align-left">
+            <div class="button-secondary bttn-filled"><i class="ri-file-copy-line ri-xl"></i> Copy URL</div>
+            <div class="button-secondary bttn-filled"><i class="ri-qr-code-line ri-xl"></i>Download QR Code</div>
+          </div>
+        </div>
+
+        <div class="class-info-card">
+          <div>
+            <h3>Class Schedule</h3>
+            <p class="subtitle">Class schedule is used to set the repeating day and the duration of the class.</p>
+          </div>
+          <div class="button-container align-left short">
+            <select name="Day" id="day-of-week">
+              <option value="" disabled selected>Select Day</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+            <input type="time" name="time-start" placeholder="7:00 AM" id="Check-in time"/>
+            <input type="time" name="time-end" class="style-time" placeholder="Web-Cloud Technology" id="Check-in-remarks"/>
+          </div>
+        </div>
+        <div class="button-container align-right">
+          <div class="button-secondary" id="back-button" onclick="goBack()">Cancel</div>
+          <div class="button-primary"><i class="ri-save-2-line ri-xl"></i>Save Change</div>
+        </div>
+      </div>
+
+      <!-- Attendance Section -->
+      <div id="attendance" class="content-section">
+        <div class="table-content">
+          <table>
+            <thead>
+            <tr>
+            <tr>
+              <th rowspan="2">No.</th>
+              <th rowspan="2">Student Name</th>
+              <th rowspan="2">Student Gender</th>
+              <th colspan="12">Attendance</th>
+            </tr>
+            <tr >
+              <th class="week-th">W 1</th>
+              <th class="week-th">W 2</th>
+              <th class="week-th">W 3</th>
+              <th class="week-th">W 4</th>
+              <th class="week-th">W 5</th>
+              <th class="week-th">W 6</th>
+              <th class="week-th">W 7</th>
+              <th class="week-th">W 8</th>
+              <th class="week-th">W 9</th>
+              <th class="week-th">W 10</th>
+              <th class="week-th">W 11</th>
+              <th class="week-th">W 12</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Example Rows with Khmer Names Written in English -->
+            <tr>
+              <td>1</td>
+              <td>Sok Li</td>
+              <td>Male</td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mao Sokha</td>
+              <td>Female</td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Chea Rathanak</td>
+              <td>Male</td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Sovann Veasna</td>
+              <td>Female</td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Phanith Dara</td>
+              <td>Male</td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Kong Srey Pich</td>
+              <td>Female</td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Chan Sophea</td>
+              <td>Male</td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Lao Chenda</td>
+              <td>Female</td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Prak Bopha</td>
+              <td>Female</td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Yim Samnang</td>
+              <td>Male</td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-fill checkbox" onclick="toggleCheckbox(this)"></i></td>
+              <td><i class="ri-checkbox-blank-line checkbox" onclick="toggleCheckbox(this)"></i></td>
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="button-container align-right">
+          <div class="button-secondary" id="back-button" onclick="goBack()">Cancel</div>
+          <div class="button-primary"><i class="ri-save-2-line ri-xl"></i>Save Change</div>
+        </div>
+      </div>
+
+      <!-- Configuration Section -->
+      <div id="configuration" class="content-section">
+        <!-- Class Status Card -->
+        <div class="class-info-card class-status-card">
+          <h3>Class Status</h3>
+          <p class="subtitle">Update the current status of the class:</p>
+          <div class="status-container">
+            <label class="status-option active">
+              <input type="radio" name="class-status" value="active">
+              <div class="status-box">
+                <i class="ri-checkbox-circle-line"></i>
+                <span class="status-title">Active</span>
+                <span class="status-description">Class is ongoing and open for students.</span>
+              </div>
+            </label>
+            <label class="status-option inactive">
+              <input type="radio" name="class-status" value="inactive">
+              <div class="status-box">
+                <i class="ri-close-circle-line"></i>
+                <span class="status-title">Inactive</span>
+                <span class="status-description">Class is paused and currently not active.</span>
+              </div>
+            </label>
+            <label class="status-option ended">
+              <input type="radio" name="class-status" value="ended">
+              <div class="status-box">
+                <i class="ri-check-double-line"></i>
+                <span class="status-title">End Class</span>
+                <span class="status-description">Class has ended and no further activities are allowed.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Delete Class Card -->
+        <div class="class-info-card">
+          <h3>Delete Class</h3>
+          <p class="subtitle">Are you sure you want to delete this class? This action cannot be undone.</p>
+          <div class="button-container">
+            <button class="button-primary bttn-filled destructive" onclick="confirmDelete()"><i class="ri-delete-bin-line"></i> Delete Class</button>
+          </div>
+        </div>
+
+        <!-- Save & Cancel Buttons -->
+        <div class="button-container align-right">
+          <div class="button-secondary" id="back-button" onclick="goBack()">Cancel</div>
+          <div class="button-primary"><i class="ri-save-2-line ri-xl"></i>Save Change</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="script.js"></script> <!-- Include your script here -->
+
+</body>
+</html>

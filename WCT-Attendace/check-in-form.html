@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <meta charset="UTF-8">
+  <title>Check in</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<!--<div class="loading-overlay" id="loading-overlay">-->
+<!--  <i class="ri-loader-line loader"></i>-->
+<!--</div> &lt;!&ndash; Loading overlay &ndash;&gt;-->
+<!--<div class="page show" id="page-content">-->
+
+  <div class="popup" id="logout-popup">
+    <div class="popup-content">
+      <div style="font-weight: bold">Are you sure you want to log out?</div>
+      <div class="popup-buttons">
+        <button class="button-secondary cancel-btn" onclick="hidePopup()">Cancel</button>
+        <button class="button-primary confirm-btn" onclick="window.location.href='index.html'">Log out</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="check-in-form-container">
+    <div class="float-checkin-container">
+      <div class="float-container">
+        <div class="account" id="student-account"><i class="ri-user-3-line"></i> student123@rupp.edu.kh</div>
+        <div class="logout-button" onclick="showPopup()"><i class="ri-logout-box-r-line"></i></div>
+      </div>
+
+      <div class="checkin-container">
+        <div class="class-info-container">
+          <img class="class-icon" alt="Class Image" src="images/class-avatar.png"/>
+          <div style="font-weight: bold" id="class_title">Web and Cloud Technology I</div>
+          <div class="subj-id-container">
+            <div>Subject ID:</div>
+            <div>WCT0202024</div>
+          </div>
+        </div>
+
+        <div class="class-detail-container">
+          <div class="item-list">
+            <div class="item-title">Check-in Time:</div>
+            <div class="item-detail" id="check-in-time">6:50AM</div>
+          </div>
+          <div class="item-list">
+            <div class="item-title">Behavior:</div>
+            <div class="item-detail" id="check-in-behavior">Regular</div>
+          </div>
+          <div class="item-list">
+            <div class="item-title">Timeframe:</div>
+            <div class="timeframe-container">
+              <div class="item-detail">7:00 AM</div>
+              <i class="ri-arrow-right-line"></i>
+              <div class="item-detail">11:00 AM</div>
+            </div>
+          </div>
+          <div class="input-remark">
+            <a class="subtitle">Check-in remarks</a>
+            <input type="text" name="text" placeholder="Remarks here" id="Check-in-remarks"/>
+          </div>
+        </div>
+        <div class="button-container" style="align-items: center">
+          <a href="check-in-result.html" type="" class="button-primary">Check in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

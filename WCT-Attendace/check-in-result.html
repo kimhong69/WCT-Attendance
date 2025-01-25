@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Check in</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+<!--<div class="loading-overlay" id="loading-overlay">-->
+<!--  <i class="ri-loader-line loader"></i>-->
+<!--</div> &lt;!&ndash; Loading overlay &ndash;&gt;-->
+<!--<div class="page show" id="page-content">-->
+
+
+  <div class="popup" id="logout-popup">
+    <div class="popup-content">
+      <div style="font-weight: bold">Are you sure you want to log out?</div>
+      <div class="popup-buttons">
+        <button class="button-secondary cancel-btn" onclick="hidePopup()">Cancel</button>
+        <button class="button-primary confirm-btn" onclick="window.location.href='index.html'">Log out</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="check-in-form-container">
+    <div class="float-checkin-container">
+      <div class="float-container">
+        <div class="account" id="student-account"><i class="ri-user-3-line"></i> student123@rupp.edu.kh</div>
+        <div class="logout-button" onclick="showPopup()">
+          <i class="ri-logout-box-r-line"></i>
+        </div>
+      </div>
+
+      <div class="checkin-container">
+        <div class="class-info-container">
+          <img class="class-icon" alt="Class Image" src="images/class-avatar.png"/>
+          <div style="font-weight: bold" id="class_title">Web and Cloud Technology I</div>
+          <div class="subj-id-container">
+            <div>Subject ID:</div>
+            <div>WCT0202024</div>
+          </div>
+        </div>
+        <div class="Check-in-message" id="check-in-message"><i class="ri-checkbox-circle-line ri-xl"></i>Checked in!
+        </div>
+        <div class="result-container">
+          <div class="class-detail-container">
+            <div class="item-list">
+              <div class="item-title">Date:</div>
+              <div class="item-detail" id="check-in-date">16 October 2024</div>
+            </div>
+            <div class="item-list">
+              <div class="item-title">Time:</div>
+              <div class="item-detail" id="check-in-time">8:50AM</div>
+            </div>
+            <div class="item-list">
+              <div class="item-title">Behavior:</div>
+              <div class="item-detail" id="check-in-behavior">
+                <div class="behavior-pill">Regular</div>
+              </div>
+            </div>
+            <div class="item-list">
+              <div class="item-title">Remarks:</div>
+              <div class="item-detail" id="remark">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+          </div>
+        </div>
+        <div class="button-container" style="align-items: center">
+          <a href="#" id="screenshot-button" class="button-secondary">
+            <i class="ri-camera-line ri-lg"></i>Screenshot
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+
+
+</body>
+</html>

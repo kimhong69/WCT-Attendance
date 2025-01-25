@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div id="overlay" class="overlay" onclick="createPopup()"></div>
+  <div class="popup" id="create-popup">
+    <div class="popup-content">
+      <div class="page-title">
+        <div class="title-wrapper">
+          <h3>Create Student</h3>
+          <p>Create new student to database</p>
+        </div>
+        <div class="icon-button" onclick="hideCreatePopup()">
+          <i class="ri-close-line ri-xl"></i>
+        </div>
+      </div>
+      <div class="create-student-info">
+        <div class="item-list">
+          <div class="item-title small">First Name</div>
+          <input class="create-input" id="student-first-name" type="text" placeholder="First Name"/>
+        </div>
+        <div class="item-list">
+          <div class="item-title small">Last Name</div>
+          <input class="create-input" id="student-last-name" type="text" placeholder="Last Name"/>
+        </div>
+        <div class="item-list">
+          <div class="item-title small">Email Address</div>
+          <input class="create-input" id="class-name" type="email" placeholder="example@example.com"/>
+        </div>
+        <div class="item-list">
+          <div class="item-title small">Phone Number</div>
+          <input class="create-input" id="class-name" type="email" placeholder="012 345 678"/>
+        </div>
+        <div class="item-list">
+          <div class="item-title small">Passwords</div>
+          <input class="create-input" id="class-name" type="email" placeholder="Passwords"/>
+        </div>
+        <p class="subtitle">Passwords will be used for logging in and checking in classes</p>
+      </div>
+      <div class="button-container align-right">
+        <div class="button-secondary cancel-btn" onclick="hideCreatePopup()">Cancel</div>
+        <div class="button-primary confirm-btn" onclick="hideCreatePopup()">Create</div>
+      </div>
+    </div>
+  </div>
+
+<header>
+  <div class="logo">
+    <img src="images/logo.svg" alt="logo">
+  </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="admin-landing.html" ><i class="ri-information-2-line"></i> Homepage</a></li>
+      <li><a href="class-listing.html"><i class="ri-graduation-cap-line"></i> Class Management</a></li>
+      <li><a href="student-listing.html" class="active" ><i class="ri-file-2-line"></i> Student Management</a></li>
+      <li><a href="user-listing.html"><i class="ri-user-line"></i> User Management</a></li>
+    </ul>
+    <label for="profile-toggle" class="avatar-container">
+      <img class="avatar" src="images/avatar.png" alt="logo">
+    </label>
+
+    <!-- Hidden checkbox to toggle modal -->
+    <input type="checkbox" id="profile-toggle" class="toggle-checkbox">
+
+    <!-- Profile modal -->
+    <div class="profile-modal">
+      <div class="profile-title-wrapper">
+        <div class="profile-img-wrapper">
+          <img class="profile-img" src="images/avatar.png" alt="profile">
+          <button class="edit-btn"><i class="ri-edit-line"></i></button>
+        </div>
+        <h1>Moeun Samphorsmonydeth</h1>
+        <p class="subj-id-container">Admin</p>
+      </div>
+
+      <div class="menu-list">
+        <a class="button-line"><i class="ri-user-3-line"></i> Profile</a>
+        <a class="button-line"><i class="ri-lock-password-line"></i> Change Passwords</a>
+        <a href="admin-login.html" class="button-line red" ><i class="ri-logout-box-line"></i> Log out</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <div class="content-wrapper">
+    <div class="table-wrapper">
+      <div class="page-title">
+        <div class="title-wrapper">
+          <h3>Student Management</h3>
+          <p class="subtitle">Student registered in the system are listed here. For their attendance, please see in each <b>Class Management</b></p>
+        </div>
+        <div class="button-create" onclick="createPopup()"><i class="ri-add-fill ri-xl"></i> Create Student</div>
+      </div>
+
+      <div class="search-input">
+        <i class="ri-search-line"></i>
+        <input class="search-bar" type="text" placeholder="Search...">
+      </div>
+
+      <div class="table-content">
+        <table>
+          <thead>
+          <tr>
+            <th>No.</th>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Gender</th>
+            <th>Email Address</th>
+            <th>Enrollment Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>24-00001</td>
+            <td>Sokha Chhim</td>
+            <td>M</td>
+            <td>sokha.c@rupp.edu.kh</td>
+            <td>24/07/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line" ref=""><span ref=""> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>24-00002</td>
+            <td>Rithy Phan</td>
+            <td>M</td>
+            <td>rithy.p@rupp.edu.kh</td>
+            <td>15/08/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>24-00003</td>
+            <td>Vannary Keo</td>
+            <td>F</td>
+            <td>vannary.k@rupp.edu.kh</td>
+            <td>12/06/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>24-00004</td>
+            <td>Sophea Chan</td>
+            <td>F</td>
+            <td>sophea.c@rupp.edu.kh</td>
+            <td>03/11/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>24-00005</td>
+            <td>Borey Hun</td>
+            <td>M</td>
+            <td>borey.h@rupp.edu.kh</td>
+            <td>22/05/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>24-00006</td>
+            <td>Kosal Meas</td>
+            <td>M</td>
+            <td>kosal.m@rupp.edu.kh</td>
+            <td>09/09/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>24-00007</td>
+            <td>Malis Penh</td>
+            <td>F</td>
+            <td>malis.p@rupp.edu.kh</td>
+            <td>14/07/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>24-00008</td>
+            <td>Sokmean Lay</td>
+            <td>M</td>
+            <td>sokmean.l@rupp.edu.kh</td>
+            <td>01/04/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>24-00009</td>
+            <td>Rachna Chea</td>
+            <td>F</td>
+            <td>rachna.c@rupp.edu.kh</td>
+            <td>18/03/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>24-00010</td>
+            <td>Pich Rath</td>
+            <td>M</td>
+            <td>pich.r@rupp.edu.kh</td>
+            <td>25/10/2024</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="student-detail.html"><i class="ri-eye-line"><span> Detail</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+
+      <div class="table-footer">
+        <div class="pagination-count subtitle">
+          Showing
+          <div class="subtitle bold" id="query-count-rank">1-10</div>
+          out of
+          <div class="subtitle bold" id="query-count">32</div>
+          result(s)
+        </div>
+        <div class="button-container align-right">
+          <div class="icon-button">
+            <i class="ri-arrow-left-s-line ri-xl"></i>
+          </div>
+          <div class="icon-button">
+            <i class="ri-arrow-right-s-line ri-xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="script.js"></script> <!-- Include your script here -->
+</body>
+</html>

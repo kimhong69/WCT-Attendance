@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div id="mySidebar" class="sidebar">
+  <div class="sidebar-wrapper">
+<!--  <a href="javascript:void(0)" class="close-btn" >&times;</a>-->
+  <div class="icon-button close-btn" onclick="closeSidebar()">
+    <i class="ri-close-line ri-xl"></i>
+  </div>
+  <div class="title-wrapper">
+  <h3>QR Code Info</h3>
+    <p class="subtitle">Class:</p>
+    <p class="subtitle bold">Web and Cloud Technology</p>
+    <p class="subtitle bold">WCT202024</p>
+  </div>
+    <div class="class-qr-wrapper">
+      <img class="class-qr" src="images/qr-code.png" alt="class logo">
+    </div>
+    <div class="button-container">
+      <div class="button-secondary bttn-filled"><i class="ri-file-copy-line ri-xl"></i> Copy URL</div>
+      <div class="button-secondary bttn-filled"><i class="ri-qr-code-line ri-xl"></i>Download QR Code</div>
+    </div>
+  </div>
+</div>
+
+<div id="overlay" class="overlay" onclick="hidePopup()"></div>
+  <div class="popup" id="create-popup">
+    <div class="popup-content">
+      <div class="page-title">
+        <div class="title-wrapper">
+          <h3>Create Class</h3>
+          <p class="subtitle">Create new class</p>
+        </div>
+        <div class="icon-button" onclick="hideCreatePopup()">
+          <i class="ri-close-line ri-xl"></i>
+        </div>
+      </div>
+      <div class="create-class-info">
+        <div class="item-list">
+          <div class="item-title small">Class Name</div>
+          <input class="create-input" id="class-name" type="text" placeholder="Name"/>
+        </div>
+        <div class="item-list">
+          <div class="item-title small">Class ID</div>
+          <input class="create-input" id="class-id" type="text" placeholder="ID"/>
+        </div>
+      </div>
+      <div class="button-container align-right">
+        <div class="button-secondary cancel-btn" onclick="hideCreatePopup()">Cancel</div>
+        <div class="button-primary confirm-btn" onclick="hideCreatePopup()">Create</div>
+      </div>
+    </div>
+  </div>
+
+<header>
+  <div class="logo">
+    <img src="images/logo.svg" alt="logo">
+  </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="admin-landing.html" ><i class="ri-information-2-line"></i> Homepage</a></li>
+      <li><a href="class-listing.html"  class="active"><i class="ri-graduation-cap-line"></i> Class Management</a></li>
+      <li><a href="student-listing.html" ><i class="ri-file-2-line"></i> Student Management</a></li>
+      <li><a href="user-listing.html"><i class="ri-user-line"></i> User Management</a></li>
+    </ul>
+    <label for="profile-toggle" class="avatar-container">
+      <img class="avatar" src="images/avatar.png" alt="logo">
+    </label>
+
+    <!-- Hidden checkbox to toggle modal -->
+    <input type="checkbox" id="profile-toggle" class="toggle-checkbox">
+
+    <!-- Profile modal -->
+    <div class="profile-modal">
+      <div class="profile-title-wrapper">
+        <div class="profile-img-wrapper">
+          <img class="profile-img" src="images/avatar.png" alt="profile">
+          <button class="edit-btn"><i class="ri-edit-line"></i></button>
+        </div>
+        <h1>Moeun Samphorsmonydeth</h1>
+        <p class="subj-id-container">Admin</p>
+      </div>
+
+      <div class="menu-list">
+        <a class="button-line"><i class="ri-user-3-line"></i> Profile</a>
+        <a class="button-line"><i class="ri-lock-password-line"></i> Change Passwords</a>
+        <a href="admin-login.html" class="button-line red" ><i class="ri-logout-box-line"></i> Log out</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <div class="content-wrapper">
+    <div class="table-wrapper">
+      <div class="page-title">
+        <div class="title-wrapper">
+          <h3>Class Management</h3>
+          <p class="subtitle">All classes are listed here</p>
+        </div>
+        <div class="button-create" onclick="createPopup()"><i class="ri-add-fill ri-xl"></i> Create Class</div>
+      </div>
+
+      <div class="search-input">
+        <i class="ri-search-line"></i>
+        <input class="search-bar" type="text" placeholder="Search...">
+      </div>
+
+      <div class="table-content">
+        <table>
+          <thead>
+          <tr>
+            <th>No.</th>
+            <th>Class ID</th>
+            <th>Class Name</th>
+            <th>Created Date</th>
+            <th>No. of Students</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>WCTS123</td>
+            <td>Web and Cloud Technology</td>
+            <td>2024-10-16</td>
+            <td>50</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <a href="class-detail.html"><i class="ri-eye-line" ref=""><span ref=""> Detail</span></i></a>
+              <a class="open-btn" onclick="openSidebar()"><i class="ri-qr-code-line" ><span> Get QR</span></i></a>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>CLS124</td>
+            <td>Science 101</td>
+            <td>2024-10-17</td>
+            <td>25</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>CLS125</td>
+            <td>History 101</td>
+            <td>2024-10-18</td>
+            <td>28</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>CLS126</td>
+            <td>English 101</td>
+            <td>2024-10-19</td>
+            <td>32</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>CLS127</td>
+            <td>Art 101</td>
+            <td>2024-10-20</td>
+            <td>20</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>CLS128</td>
+            <td>Geography 101</td>
+            <td>2024-10-21</td>
+            <td>15</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>CLS129</td>
+            <td>Physics 101</td>
+            <td>2024-10-22</td>
+            <td>22</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>CLS130</td>
+            <td>Chemistry 101</td>
+            <td>2024-10-23</td>
+            <td>18</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>CLS131</td>
+            <td>Biology 101</td>
+            <td>2024-10-24</td>
+            <td>27</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>CLS132</td>
+            <td>Philosophy 101</td>
+            <td>2024-10-25</td>
+            <td>10</td>
+            <td><span class="status-pill">Active</span></td>
+            <td class="actions">
+              <i class="ri-eye-line"><span> Detail</span></i>
+              <i class="ri-qr-code-line"><span> Get QR</span></i>
+              <i class="ri-edit-2-line"><span> Edit</span></i>
+              <i class="ri-delete-bin-line delete-icon"><span> Delete</span></i>
+            </td>
+          </tr>
+
+          <!-- More rows as needed -->
+          </tbody>
+        </table>
+        </div>
+
+      <div class="table-footer">
+        <div class="pagination-count subtitle">
+          Showing
+          <div class="subtitle bold" id="query-count-rank">1-10</div>
+          out of
+          <div class="subtitle bold" id="query-count">32</div>
+          result(s)
+        </div>
+        <div class="button-container align-right">
+          <div class="icon-button">
+            <i class="ri-arrow-left-s-line ri-xl"></i>
+          </div>
+          <div class="icon-button">
+            <i class="ri-arrow-right-s-line ri-xl"></i>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+  <script src="script.js"> </script>
+<script src="js/classTable.js">
+
+</script>
+
+</body>
+</html>

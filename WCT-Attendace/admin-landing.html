@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Landing Page</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+<!--<div class="loading-overlay" id="loading-overlay">-->
+<!--  <i class="ri-loader-line loader"></i>-->
+<!--</div> &lt;!&ndash; Loading overlay &ndash;&gt;-->
+<!--<div class="page show" id="page-content">-->
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.svg" alt="logo">
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="admin-landing.html" class="active"><i class="ri-information-2-line"></i> Homepage</a></li>
+        <li><a href="class-listing.html"><i class="ri-graduation-cap-line"></i> Class Management</a></li>
+        <li><a href="student-listing.html"><i class="ri-file-2-line"></i> Student Management</a></li>
+        <li><a href="user-listing.html"><i class="ri-user-line"></i> User Management</a></li>
+      </ul>
+      <label for="profile-toggle" class="avatar-container">
+        <img class="avatar" src="images/avatar.png" alt="logo">
+      </label>
+
+      <!-- Hidden checkbox to toggle modal -->
+      <input type="checkbox" id="profile-toggle" class="toggle-checkbox">
+
+      <!-- Profile modal -->
+      <div class="profile-modal">
+        <div class="profile-title-wrapper">
+          <div class="profile-img-wrapper">
+            <img class="profile-img" src="images/avatar.png" alt="profile">
+            <button class="edit-btn"><i class="ri-edit-line"></i></button>
+          </div>
+        <h1>Moeun Samphorsmonydeth</h1>
+        <p class="subj-id-container">Admin</p>
+        </div>
+
+        <div class="menu-list">
+          <div class="button-line"><i class="ri-user-3-line"></i> Profile</div>
+          <div class="button-line"><i class="ri-lock-password-line"></i> Change Passwords</div>
+          <div class="button-line red"><i class="ri-logout-box-line"></i> Log out</div>
+        </div>
+      </div>
+
+    </nav>
+
+  </header>
+
+  <div
+    style="display: flex; justify-content: center; align-items: center; height: calc(100vh - 100px); text-align: center;">
+    <h1>Menu</h1>
+  </div>
+
+
+<script src="script.js"></script> <!-- Include your script here -->
+
+</body>
+</html>
